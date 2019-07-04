@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<title>Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+          <!-- link href="css/bootstrap.min.css" rel="stylesheet" /-->
+</head>
+<body style="background-color:#5fb0e4">
+<div class="container">
+<div class="col-lg-4"></div>
+	<div class="col-lg-4"> 
+	<div class="jumbotron" style="margin-top:150px">
+		<h2>Inicio de sesion</h2>
+		<!-- form id="log" action="#"  th:action="@{/login}" th:object="${user}" method="POST"-->
+		<form  th:action="@{/login}"  method="POST">
+	 	<div class="form-group">
+	     <input  type="text" id="username" name="username" placeholder="Usuario" required="autofocus"
+      class="form-control" />
+      </div>
+      <div class="form-group">
+      <input  type="password" id="contrasena" name="contrasena" placeholder="Password" required="autofocus"  
+      class="form-control" />
+      </div>
+       <div class="checkbox">
+        <label>
+         <input type="checkbox" /> Recordarme </label></div>
+      	<div class="form-group">	
+          <button  class="btn btn-lg btn-primary btn-block btn-signin" type="submit"> Entrar </button>
+          </div>
+          <!-- a class="btn" href="#">Crear Cuenta</a></div--> 	
+          <!-- span id="mensaje" th:text="${mess}"></span--> 
+          <div class="alert alert-danger" role="alert" th:if="${param.error}">  
+           El usuario o password es incorrecto ! </div> 
+           </form>
+         	<div class="col-lg-4"></div>
+		 </div>
+	   </div>
+	  </div>
+	
+	<!--script type="text/javascript" src="js/jquery-3.2.0.min.js"></script-->
+	<!--script type="text/javascript" src="js/bootstrap.min.js"></script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script type="text/javascript">
+    $('#clave').blur( 
+            function() {
+            $('#mensaje').load('login.do', 
+                               "login="+$('#usuario').val(),"clave="+$('#contrasena').val())
+        } 
+      )
+</script>
+</body>
+</html>

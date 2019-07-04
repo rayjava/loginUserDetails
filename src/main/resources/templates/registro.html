@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<script  type="text/javascript"> 
+function irA() {
+	ventanaPrimera=window.self; 
+	ventanaPrimera.opener=window.self; 
+	ventanaPrimera.close();
+	window.open('http://localhost:1111/Bootstrap01/','javascript_1','_new'); 
+	return false;
+	
+}
+</script>
+<meta charset="ISO-8859-1"/>
+<title>registro</title>
+</head>
+<body onload="irA()">
+<!--  a href="http://localhost:1111/Bootstrap01/">BootStrap</a-->
+<!--  a href="#" onClick="window.open('http://localhost:1111/Bootstrap01/','javascript_1'); return false;">Click</a-->
+</body>
+</html>
